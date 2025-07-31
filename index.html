@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- History Bar -->
+    <div class="history-bar" id="historyBar">
+        <button class="history-toggle" id="historyToggle">
+            <span class="history-icon">📜</span>
+            History
+            <span class="arrow">▼</span>
+        </button>
+        <div class="history-content" id="historyContent">
+            <h3>Previous Flips</h3>
+            <div class="history-stats">
+                <div class="stat">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalFlips">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Wins:</span>
+                    <span class="stat-value wins" id="totalWins">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Losses:</span>
+                    <span class="stat-value losses" id="totalLosses">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Win Rate:</span>
+                    <span class="stat-value" id="winRate">0%</span>
+                </div>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be added here -->
+            </div>
+            <button class="clear-history" id="clearHistory">Clear History</button>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="game-container">
+        <h1 class="game-title">Coin Flip Challenge</h1>
+        
+        <!-- Coin Display -->
+        <div class="coin-wrapper">
+            <div class="coin" id="coin">
+                <div class="coin-side heads">
+                    <div class="coin-inner">H</div>
+                </div>
+                <div class="coin-side tails">
+                    <div class="coin-inner">T</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Choice Selection -->
+        <div class="choice-section" id="choiceSection">
+            <h2>Make Your Choice</h2>
+            <div class="choice-buttons">
+                <button class="choice-btn" data-choice="heads">
+                    <div class="choice-icon">👑</div>
+                    <span>Heads</span>
+                </button>
+                <button class="choice-btn" data-choice="tails">
+                    <div class="choice-icon">🦅</div>
+                    <span>Tails</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Flip Button -->
+        <button class="flip-btn" id="flipBtn" disabled>
+            <span class="flip-text">Choose First</span>
+        </button>
+
+        <!-- Result Display -->
+        <div class="result-display" id="resultDisplay"></div>
+    </div>
+
+    <!-- Victory/Defeat Overlays -->
+    <div class="overlay victory-overlay" id="victoryOverlay">
+        <div class="overlay-content">
+            <div class="confetti"></div>
+            <h2 class="overlay-text">Victory!</h2>
+            <div class="overlay-emoji">🎉</div>
+        </div>
+    </div>
+
+    <div class="overlay defeat-overlay" id="defeatOverlay">
+        <div class="overlay-content">
+            <h2 class="overlay-text">Defeat!</h2>
+            <div class="overlay-emoji">😢</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
